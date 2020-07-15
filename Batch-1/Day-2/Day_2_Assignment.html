@@ -52,6 +52,24 @@
             //convert whole string to upper case
             console.log(str2.toUpperCase()); //HI EVERYONE
             console.log(str.trim()); // Remove whitespaces from both sides of string
+            
+            //Array Methods
+
+            var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            var vegetables= [ "tomato", "potato"];
+
+            console.log("Array to String : "+ fruits.toString());
+            console.log("Join concat specified string with all array element : "+fruits.join(" - "));
+            console.log("Pop removes last array element : " + fruits.pop());
+            console.log("push add elements to array at the end : "+ fruit.psh("Guava"));
+            //The shift() method returns the string that was "shifted out":
+            console.log(fruits.shift());
+            //The unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements: 
+            console.log(fruit.unshift("Watermelon"));
+            console.log("Override array element at 0th index : "+(fruit[0]="Kiwi"));
+            console.log("Array length : " + fruit.length);
+            console.log(fruits.splice(0, 1));        // Removes the first element of fruits
+            console.log(fruits.concat(vegetables));
         </script>
 
         <br> Answer 3 : <br>
