@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Assignment Batch 1 - Day 1  by <b>Sandeep Kadam</b><br>
+
+    Ans 1: 
+    <br>
+    <p>
+    1. console.log() : Mainly used to log(print) the output to the console. We can put any type inside the log(), be it a string, array, object, boolean etc.<br>
+    
+    <!-- Example :
+    console.log('sandeep');  
+    console.log(1); 
+    console.log(true); 
+    console.log(null); 
+    console.log(undefined);  
+    console.log([a, b, c, d]); // array inside log 
+    console.log({x:1, y:2, z:3}); // object inside log  -->
+
+    2. console.error() : Used to log error message to the console. Useful in testing of code. By default the error message will be highlighted with red color.<br>
+
+    <!-- Example : console.error('custom error message or log');  -->
+
+    3. console.warn() : Used to log warning message to the console. By default the warning message will be highlighted with yellow color.<br>
+    
+    <!-- Example : console.warn('Your warning text goes here'); -->
+    
+    4. console.clear() : Used to clear the console. The console will be cleared, in case of Chrome a simple overlayed text will be printed like : ‘Console was cleared’ while in firefox no message is returned.<br>
+
+    <!-- Example :   console.clear();  -->
+
+    5. console.time() and console.timeEnd() : Whenever we want to know the amount of time spend by a block or a function, we can make use of the time() and timeEnd() methods provided by the javascript console object. They take a label which must be same, and the code inside can be anything( function, object, simple console).<br>
+
+    <!-- Example : 
+    console.time('mycode ET'); 
+    function displayMsg(){ 
+        console.log('Hello World'); 
+    } 
+    displayMsg(); 
+   console.timeEnd('mycode ET'); -->
+   
+   6.  console.table() : This method allows us to generate a table inside a console. The input must be an array or an object which will be shown as a table.<br>
+
+   <!-- Example : console.table({'a':1, 'b':2});  -->
+
+   7. console.count() : This method is used to count the number that the function hit by this counting method.<br>
+
+   <!-- Example : for(let i=0;i<5;i++){ 
+                console.count(i); 
+            }  -->
+
+    8. console.group() and console.groupEnd() : group() and groupEnd() methods of the console object allows us to group contents in a separate block, which will be indented. Just like the time() and the timeEnd() they also accepts label, again of same value.<br><br>
+
+    <!-- Example : 
+    console.group('myGroup'); 
+    console.warn('warning!'); 
+    console.error('error goes here'); 
+    console.log('hello js'); 
+    console.groupEnd('myGroup'); 
+    console.log('separate block ');  -->
+    </p>
+
+    <p>
+        Ans 2 :<br><br>
+
+        Var<br>
+
+        The JavaScript variables statement is used to declare a variable and, optionally, we can initialize the value of that variable.<br>
+
+        Example: var a =10;<br>
+
+            Variable declarations are processed before the execution of the code.<br>
+            The scope of a JavaScript variable declared with var is its current execution context.<br>
+            The scope of a JavaScript variable declared outside the function is global.<br><br>
+    
+        let<br>
+
+        The let statement declares a local variable in a block scope. It is similar to var, in that we can optionally initialize the variable.<br>
+        
+        Example: let a =10;<br>
+        
+            The let statement allows you to create a variable with the scope limited to the block on which it is used.<br>
+            It is similar to the variable we declare in other languages like Java, .NET, etc.<br><br>
+
+        const<br>
+
+        const statement values can be assigned once and they cannot be reassigned. The scope of const statement works similar to let statements.<br>
+
+        Example: const a =10;<br><br>
+    </p>
+    <p>
+        Ans 3 : <br>
+        Six Data Types that are primitives, checked by typeof operator:<br>
+
+        undefined : typeof instance === "undefined"<br>
+        Boolean : typeof instance === "boolean"<br>
+        Number : typeof instance === "number"<br>
+        String : typeof instance === "string"<br>
+        BigInt : typeof instance === "bigint"<br>
+        Symbol : typeof instance === "symbol"<br><br>
+
+        null : typeof instance === "object". Special primitive type having additional usage for it's value: if object is not inherited, then null is shown;<br><br>
+        
+        Object : typeof instance === "object". Special non-data but structural type for any constructed object instance also used as data structures: new Object, new Array, new Map, new Set, new WeakMap, new WeakSet, new Date and almost everything made with new keyword;<br><br>
+        
+        Function non data structure, though it also answers for typeof operator: typeof instance === "function". This answer is done as a special shorthand for Functions, though every Function constructor is derived from Object constructor.
+
+    </p>
+</body>
+</html>
