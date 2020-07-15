@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>
+            Javascript Assignment
+        </title>
+    </head>
+    <body>
+        Welcome to letsUpgrade Day 2 Assignment :<br>
+        
+        By <i><b>Sandeep Kadam</b></i> <br><br>
+
+        Answer 1 :<br>
+        <script>
+            let name = prompt("What is your name?");
+            
+            console.log(`Your name is ${name}`);
+            
+        </script>
+
+        Answer 2 :<br>
+        String Methods : <br>
+        
+        <script>
+            let str = "WELCOME TO JAVASCRIPT";
+            let str2 = " Hi Everyone";
+            // return character at specified index
+            console.log(str.charAt(0)); //W
+            // return ASCII CODE of character at specified index
+            console.log(str.charCodeAt(0)); //87
+            // combines/adds two strings
+            console.log(str.concat(str2)); // WELCOME TO JAVASCRIPT HI EVERYONE
+            //checks if string ends with specified string
+            console.log(str.endsWith("JAVASCRIPT")); // true
+            //checks if string contains specified string
+            console.log(str.includes("JAVASCRIPT")); // true
+            //checks index of specified word in a string
+            console.log(str.indexOf("WELCOME")); // 0
+            //return last index of specified string
+            console.log(str.lastIndexOf("TO")); // 8
+            // returns length of string
+            console.log(str.length);    // 21
+            //returns index of specified string
+            console.log(str.search("JAVASCRIPT")); //11
+            //returns string between 5 to 10 index position
+            console.log(str.slice(5, 10)); // ME TO  //accepts positive as well as negative index
+            //returns substring between 8 to 13 index position
+            console.log(str.substring(8, 13)); //TO JA // accepts only positive index
+            // replace original string with specified replacer string
+            console.log(str.replace("JAVASCRIPT", "JAVA")); // WELCOME TO JAVA
+            //convert whole string to lower case
+            console.log(str.toLowerCase()); // welcome to javascript
+            //convert whole string to upper case
+            console.log(str2.toUpperCase()); //HI EVERYONE
+            console.log(str.trim()); // Remove whitespaces from both sides of string
+        </script>
+
+        <br> Answer 3 : <br>
+        <script>
+        let age = prompt("What is your age ?");
+
+        if(age >= 21){
+            console.log("You can DRINK!");
+        } else {
+            console.log("You cannot DRINK!");
+        }
+        </script>
+        
+    </body>
+</html>
