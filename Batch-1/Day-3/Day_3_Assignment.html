@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3</title>
+</head>
+<body>
+    <h2>Day 3 Assignment By <b>- Sandeep Kadam</b></h2><br>
+
+    Answer 1 :
+    <button onclick="getAnswerOne();">Click Me To Get Answer 1</button><br>    
+
+    Answer 2 :
+    <button onclick="getOSDetails();">Click Me To Get Answer 2</button><br>
+    
+    Answer 3 :
+    <button onclick="getResult();">Click Me To Get Answer 3</button><br>
+    <script>
+
+        function getAnswerOne(){
+            let userNumber = prompt("Enter any number to check if it is odd or even ? ");
+
+            var myNumber = Number(userNumber); 
+            if(!isNaN(myNumber)){
+                if(myNumber%2 == 0){
+                    console.log(`The number entered is ${myNumber} and Number is even`);
+                } else {
+                    console.log(`The number entered is ${myNumber} and Number is odd`);
+                }
+            } else {
+                console.log(`Enter a valid number`);
+            }
+        }
+
+        function getOSDetails(){
+            let osNameAndVersion = prompt(`Enter OS name & version separated by space(i.e Android 9) `);
+
+            var osDetails = osNameAndVersion.split(' ');
+
+            console.log(`The OS name  is ${osDetails[0]} and version is ${osDetails[1]}`);
+        }
+
+        function getResult(){
+            let marks = prompt('Enter your marks');
+            let grade;
+            if(!isNaN(marks)){
+                if(marks >= 90){
+                    grade = 'A';
+                } else if(marks >= 80 && marks < 90){
+                    grade = 'B';
+                } else if(marks >= 70 && marks < 80 ){
+                    grade = 'C';
+                } else if(marks < 70){
+                    grade = 'D';
+                }
+            } else {
+                console.log(`Enter a valid number`);
+            }
+
+            console.log(`Marks are ${marks} and grade is ${grade}`);
+        }
+        
+    </script>
+</body>
+</html>
