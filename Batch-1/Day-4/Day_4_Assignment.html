@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4</title>
+</head>
+<body>
+    <h2>Day 4 Assignment By <b>- Sandeep Kadam</b></h2><br>
+
+    Answer 1 :
+    <button onclick="printForLoopStatements();">Click Me To Get Answer 1</button><br>    
+
+    Answer 2 :
+    <button onclick="destructureObject();">Click Me To Get Answer 2</button><br>
+    
+    Answer 3 :
+    <button onclick="displayShoppingBasket();">Click Me To Get Answer 3</button><br>
+
+    <p>
+        Answer 4 :<br>
+        <input type="text" id="number1" placeholder="Enter number 1">
+        <input type="text" id="number2" placeholder="Enter number 2 "><br>
+        <button onclick="calculate('Addition');">Addition</button>
+        <button onclick="calculate('Substraction');">Substraction</button><br>
+        <button onclick="calculate('Multiplication');">Multiplication</button>
+        <button onclick="calculate('Division');">Division</button><br>
+        <button onclick="calculate('Square_Root');">Square Root</button>
+        <button onclick="calculate('Percentage');">Percentage</button>
+    </p>
+
+
+    Answer 5 :
+    <button onclick="getTotalComission();">Click Me To Get Answer 5</button><br>
+
+    Answer 6 :
+    <button onclick="stopLoop();">Click Me To Get Answer 6</button><br>
+
+    Answer 7 :
+    <button onclick="displayPrimeNumber();">Click Me To Get Answer 7</button><br>
+    
+    Answer 8 :
+    <button onclick="writeArrowFunction();">Click Me To Get Answer 8</button><br>
+    <script>
+
+        function printForLoopStatements(){
+            
+            for(var i=1; i <= 100; i++){
+                console.log("Current Number : " + i);
+                if(i%3==0 && i%5!=0){
+                    console.log("fizz");
+                } else if(i%3!=0 && i%5==0){
+                    console.log("buzz");
+                } else if(i%3==0 && i%5==0){
+                    console.log("fizzbuzz");
+                } else {
+                    console.log(`Number ${i} is not a multiple of 3 or 5`);
+                }
+            }
+        }
+
+        function destructureObject(){
+           const student = {
+               name : "Helsinki",
+               age : 24,
+               projects : {
+                   diceGame : "Two player dice game using Javascript"
+               }
+           }
+
+           const { name, age, projects:{diceGame}} = student;
+           console.log("Destructured Student Object => " + name, age, diceGame);
+        }
+
+        function displayShoppingBasket(){
+            let shoppingList = [ 'wired_earphones' , 'mouse' , 'keyboard'];
+
+            console.log(`shoppingList Array : ${shoppingList}`);
+            let shoppingBasket = [ shoppingList , 'one_plus_nord' , 'one_plus_buds'];
+
+            console.log(`shoppingBasket Array : ${shoppingBasket}`);
+
+        }
+
+
+        function calculate(operationType){
+            let num1 = parseInt(document.getElementById('number1').value);
+            let num2 = parseInt(document.getElementById('number2').value);
+            let result;
+            console.log(`First Number : is ${num1} & Second Number is ${num2}`);
+
+            switch(operationType){
+                case 'Addition'      :  result = num1+num2;
+                                        break;
+                case 'Substraction'  :  result = num1-num2;
+                                        break;
+                case 'Multiplication':  result = num1*num2;
+                                        break;
+                case 'Division'      :  result = num1/num2;
+                                        break;
+                case 'Square_Root'   :  result = Math.sqrt(num1);
+                                        break;
+                case 'Percentage'    :  result = num1%num2;
+                                        break;
+            }
+
+            if(operationType == 'Square_Root'){
+                console.log(`${operationType} of ${num1} is : ${result}`);
+            } else {
+                console.log(`${operationType} of ${num1} & ${num2} is : ${result}`);
+            }
+            
+        }
+
+        function getTotalComission(){
+            
+            let sales = prompt("What's your total sales number in a year ?");
+
+            var commission = null;
+            const salesNumber = parseInt(sales);
+
+            if(salesNumber > 20000){
+                commission = 10;
+            } else if(salesNumber >=10001 && salesNumber <= 20000){
+                commission = 7;
+            } else if(salesNumber >=5001 && salesNumber <= 10000){
+                commission = 5;
+            } else if(salesNumber <= 5000){
+                commission = 2;
+            }
+
+            console.log(`Commission earned by you is ${commission}%`);
+        }
+
+        function stopLoop(){
+            while(1){
+                var number = prompt("Enter a number");
+                console.log(`Number : ${number}`);
+                
+                if(number == "" || parseInt(number) > 100 ) {
+                    break;
+                }       
+            }
+        }
+
+        function displayPrimeNumber(){
+            let number = prompt("Enter nth number : ");
+
+            number = parseInt(number);
+            console.log(`Prime Numbers between 1 to ${number} are :`);
+            let primeNumberList = '';
+            
+            for(var i=2;i<number;i++){
+                var isPrime = true; 
+                for(var j=2;j<=i/2;j++){
+                    if(i%j ===0){
+                        isPrime = false;
+                        break;
+                    }
+                }
+
+                if(isPrime){
+                    primeNumberList+=i+',';
+                }
+            } 
+
+            console.log(primeNumberList.substring(0,primeNumberList.length-1));
+        }
+
+        function writeArrowFunction(){
+
+            // function ask(question, yes, no){
+            //     if(confirm(question)) 
+            //         yes(); 
+            //     else
+            //         no();
+            // }
+
+            // ask("Do you agree?", function(){ alert("You agreed")}, function(){ alert("You canceled the execution.")});
+
+            let ask1 = (question, yes, no) => (confirm(question)?yes():no());
+            ask1("Do you agree?", function(){ alert("You agreed")}, function(){ alert("You canceled the execution.")});
+        }
+        
+    </script>
+</body>
+</html>
