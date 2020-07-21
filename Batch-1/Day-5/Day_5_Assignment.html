@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Day 5 Assignment By <b>- Sandeep Kadam</b></h2><br>
+
+    Answer 1 :
+    <button onclick="getAnswerOne();">Click Me To Get Answer 1</button><br>  
+    
+    Answer 2 :
+    <button onclick="createClasses();">Click Me To Get Answer 2</button><br>  
+
+    Answer 3 :
+    <button onclick="callTodoApi();">Click Me To Get Answer 3</button><br>  
+    <script>
+
+        function getAnswerOne(){
+            
+            let numbers = prompt("Enter any positive number");
+            var numberArray = [numbers];
+
+            while(1){
+                if(confirm("Do you want to enter more numbers ?")){
+                    numberArray.push(prompt("Enter any positive number"))
+                } else {
+                    break;
+                }
+            }
+
+            console.log(numberArray); 
+            const oddNumbersArray = numberArray.filter(oddNumber=>oddNumber%2!=0);
+            console.log(`Odd Numbers Array : ${oddNumbersArray}`);
+
+            const cubesArray = oddNumbersArray.map(cube=>cube**3);
+            console.log(`Cubes Array : ${cubesArray}`);
+            
+        }
+
+        function createClasses(){
+
+            
+            class User {
+                constructor(name, age,email) {
+                this.name = name;
+                this.age = age;
+                this.email = email;
+                this.luCoins = 0;
+                this.courses = [];
+                }
+
+                login(){
+                    console.log(`${this.name} has logged in`);
+                    return this;
+                }
+                logout(){
+                    console.log(`${this.name} has logged out`);
+                    return this;
+                }
+            }
+
+            class Moderator extends User{
+            
+                constructor(name,age,email,role){
+                    super(name,age,email);
+                    this.role = role;
+                }
+
+                addCoins(user){
+                    user.luCoins++;
+                    console.log(`${user.name} has ${user.luCoins} coins`);
+                    return user;
+                }
+
+                deleteCoins(user){
+                    user.luCoins--;
+                    console.log(`${user.name} has ${user.luCoins} coins`);
+                    return user;
+                }
+            }
+
+            class Admin extends Moderator{
+
+                constructor(name,age,email,role){
+                    super(name,age,email,role);
+                }
+
+                addCourse(user,course){
+                    user.courses.push(course);
+                    console.log(user);
+                }
+
+                deleteCourse(user,course){
+                    user.courses.pop(course);
+                    console.log(user);
+                }
+
+            }
+            
+            let user1 = new User('Sandeep',25,'sandeepk@gmail.com');
+            let user2 = new User('Krishnan',24,'k@gmai.com');
+            let user3 = new User('Bahubali',30,'bahubali@gmai.com');
+            let user4 = new User('kattapa',50,'kattapa@gmai.com');
+            let mod = new Moderator('Berlin',24,'b@gmail.com','Moderator');
+            let admin = new Admin('Professor',25,'professor@gmail.com','Admin');
+            let users = [user1,user2,user3,user4,mod,admin];
+
+            
+            console.log("List of All Users #");
+            users.forEach(element => {
+                console.log(element);
+            });
+
+            //1.Login In And Logout
+            user1.login();
+            user1.logout();
+
+            //2.Add Coin & Remove Coin
+            mod.login();
+            mod.addCoins(user1);
+            mod.addCoins(user1);
+            mod.deleteCoins(user1);
+            mod.logout();
+
+            //3.Add course & delete course
+            admin.login();
+            admin.addCoins(user1);
+            admin.addCoins(user1);
+            admin.deleteCoins(user1);
+            admin.addCourse(user1,'Javascript');
+            admin.addCourse(user1,'Python');
+
+            console.log(`User1 courses before deleting Courses : ${user1.courses}`);
+            admin.deleteCourse(user1,'Python');
+            console.log(`User1 courses after deleting Courses : ${user1.courses}`);
+            admin.logout();
+            
+        }
+
+        function callTodoApi(){
+
+            async function getRandomTodo(apiEndPoint){
+                let status = new Promise((resolve, reject)=>{
+                    setTimeout(()=>{
+                        fetch(apiEndPoint)
+                        .then(Response=>Response.json())
+                        .then(data=>{
+                                const obj = data;
+                                console.log(obj);
+                                obj.forEach(element =>{
+                                    if(element.completed){
+                                        console.log(element); 
+                                    }
+                                });
+                            })
+                        .catch((error) => {
+                            console.error('Error:', error);
+                            });
+                        resolve('Data Successfully Received!');
+                    },1000)
+                })
+
+                let result = await status;
+                console.log(result);
+            }
+
+            getRandomTodo('https://jsonplaceholder.typicode.com/todos/');
+
+        }
+
+    </script>
+</body>
+</html>
