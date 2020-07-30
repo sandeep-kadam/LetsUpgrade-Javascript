@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .center {
+            margin: auto;
+            width: 30%;
+            border: 3px solid skyblue;
+            padding: 10px;
+        }
+
+        .centerText{
+            text-align: center;
+        }
+        </style>
+</head>
+<body class="centerText">
+    
+    <h2>Welcome to javascript Mini-Project</h2>
+
+    <h4>Question 2 by <b>Sandeep Kadam</b></h4>
+
+    <button type="button" id="btn" onclick="showStopwatch();">Click Me to Display Stopwatch</button>
+
+    <div id="timerDiv" class="center" style="display: none;">
+        <h1 id="timer"></h1>
+        <p>
+            <button type="button" id="startBtn" onclick="startStopwatch();">Start</button>
+            <button type="button" id="stopBtn" onclick="stopStopwatch();">Stop</button>
+            <button type="button" id="clearBtn" onclick="clearStopwatch();">Clear</button>    
+        </p>
+        
+    </div>
+    
+    <script src="scripts/script.js"></script>
+</body>
+</html>
